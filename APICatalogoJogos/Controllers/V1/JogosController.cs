@@ -1,4 +1,5 @@
-﻿using APICatalogoJogos.InputModel;
+﻿using APICatalogoJogos.Exceptions;
+using APICatalogoJogos.InputModel;
 using APICatalogoJogos.Services;
 using APICatalogoJogos.ViewModel;
 using Microsoft.AspNetCore.Http;
@@ -53,8 +54,8 @@ namespace APICatalogoJogos.Controllers.V1
 
                 return Ok(jogo);
             }
-            //catch (JogoJaCadastradoException ex)
-            catch (Exception ex)
+            catch (JogoJaCadastradoException ex)
+           
             {
                 return UnprocessableEntity("Já existe um jogo com esse nome para esta produtora");
             }          
@@ -69,8 +70,8 @@ namespace APICatalogoJogos.Controllers.V1
 
                 return Ok();
             }
-            //catch (JogoNaoCadastradoException ex)
-            catch (Exception ex)
+            catch (JogoNaoCadastradoException ex)
+            
 
             {
                 return NotFound("Não existe esse jogo");
@@ -86,8 +87,7 @@ namespace APICatalogoJogos.Controllers.V1
 
                 return Ok();
             }
-            //catch (JogoNaoCadastradoException ex)
-            catch (Exception ex)
+            catch (JogoNaoCadastradoException ex)        
 
             {
                 return NotFound("Não existe esse jogo");
@@ -103,8 +103,7 @@ namespace APICatalogoJogos.Controllers.V1
 
                 return Ok();
             }
-            //catch (JogoNaoCadastradoException ex)
-            catch (Exception ex)
+            catch (JogoNaoCadastradoException ex)
 
             {
                 return NotFound("Não existe esse jogo");
