@@ -65,6 +65,8 @@ namespace APICatalogoJogos.Services
                 Preco = jogo.Preco
             };
 
+            await _jogoRepository.Inserir(jogoInsert);
+
             return new JogoViewModel
             {
                 Id = jogoInsert.Id,
